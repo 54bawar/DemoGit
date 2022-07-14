@@ -5,17 +5,19 @@ const triangle=require('./triangle');
 
 function solveRect(l,b)
 {
-    console.log("Solving Rectangle");
-    if(l<=0||b<=0)
-        console.log("Rectangle dimensions invalid");
-    else
-    {
-        console.log("Area",rectangle.area(l,b));
-        console.log("Perimeter",rectangle.perimeter(l,b));
-    }
+    console.log("Solving Rectangle "+l+" "+b);
+    rectangle(l,b,(err,rect)=>{
+        if(err){
+            console.log(err.message);
+        }else{
+            console.log("\nThe Area ",rect.area());
+            console.log("The Perimeter ",rect.perimeter());
+        }
+    })
+    console.log("The function has completed");
 }
 
-function solvesquare(s)
+/*function solvesquare(s)
 {
     console.log("\nSolving Square");
     if(s<=0)
@@ -51,14 +53,14 @@ function solvetriangle(x,y,z)
         console.log("Perimeter",triangle.perimeter(x,y,z));
     }
 }
+*/
+solveRect(0,4);
 
-solveRect(5,4);
+//solvesquare(5);
 
-solvesquare(5);
+//solveCircle(6);
 
-solveCircle(6);
-
-solvetriangle(3,4,5);
+//solvetriangle(3,4,5);
 
 
 
