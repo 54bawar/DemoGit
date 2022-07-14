@@ -1,6 +1,6 @@
 const rectangle=require('./rectangle');
-const rectangle=require('./square');
-const rectangle=require('./circle');
+const square=require('./square');
+const circle=require('./circle');
 
 function solveRect(l,b)
 {
@@ -38,7 +38,9 @@ function solveCircle(r)
     }
 }
 
-
+solveRect(5,4);
+solvesquare(5);
+solveCircle(6);
 
 
 
