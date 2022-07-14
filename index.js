@@ -16,7 +16,7 @@ function solveRect(l,b)
 
 function solvesquare(s)
 {
-    console.log("Solving Square");
+    console.log("\nSolving Square");
     if(s<=0)
         console.log("Square dimensions invalid");
     else
@@ -28,7 +28,7 @@ function solvesquare(s)
 
 function solveCircle(r)
 {
-    console.log("Solving Circle");
+    console.log("\nSolving Circle");
     if(r<=0)
         console.log("Circle dimensions invalid");
     else
@@ -39,7 +39,9 @@ function solveCircle(r)
 }
 
 solveRect(5,4);
+
 solvesquare(5);
+
 solveCircle(6);
 
 

@@ -1,2 +1,2 @@
-exports.perimeter=(r)=>2*3.14*r;
-exports.area=(r)=>(3.14*r*r);
+exports.perimeter=(r)=>2*22*r/7;
+exports.area=(r)=>(22*r*r/7);
