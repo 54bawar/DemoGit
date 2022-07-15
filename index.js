@@ -3,6 +3,7 @@ const square=require('./square');
 const circle=require('./circle');
 const triangle=require('./triangle');
 
+/*
 function solveRect(l,b)
 {
     console.log("Solving Rectangle "+l+" "+b);
@@ -15,20 +16,26 @@ function solveRect(l,b)
         }
     })
     console.log("The function has completed");
-}
+}*/
 
-/*function solvesquare(s)
+
+
+function solvesquare(s)
 {
-    console.log("\nSolving Square");
-    if(s<=0)
-        console.log("Square dimensions invalid");
-    else
-    {
-        console.log("Area",square.area(s));
-        console.log("Perimeter",square.perimeter(s));
-    }
+    console.log("Solving Square "+s);
+    square(s,(err,sq)=>{
+        if(err){
+            console.log(err.message);
+        }else{
+            console.log("\nThe Area :",sq.area());
+            console.log("\nThe Perimeter :",sq.perimeter());
+        }
+    })
+    console.log("The Function has completed");
 }
 
+
+/*
 function solveCircle(r)
 {
     console.log("\nSolving Circle");
@@ -40,7 +47,9 @@ function solveCircle(r)
         console.log("Perimeter",circle.perimeter(r));
     }
 }
+*/
 
+/*
 function solvetriangle(x,y,z)
 {
     console.log("\nSolving Triangle");
@@ -54,9 +63,11 @@ function solvetriangle(x,y,z)
     }
 }
 */
-solveRect(0,4);
 
-//solvesquare(5);
+
+//solveRect(0,4);
+
+solvesquare(5);
 
 //solveCircle(6);
 
