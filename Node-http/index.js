@@ -47,7 +47,7 @@ const server = http.createServer((req, res) =>{
         }
     }
     else {
-        res.statusCode = 200;
+        res.statusCode = 400;
         res.setHeader('Content-Type', 'text/html');
         res.end('<html><body><h1>Request method not supported</h1><body></html>');
     }
