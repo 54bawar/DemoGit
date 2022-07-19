@@ -12,5 +12,8 @@
     "url": "http_training"
   },
   "author": "Mayank Choudhary",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
