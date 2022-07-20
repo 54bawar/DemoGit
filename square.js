@@ -1,8 +1,8 @@
 module.exports=(s,callback)=>{
     if(s<=0){
         setTimeout(()=>{
-            callback(new Error("Sqaure invalid"));
-        },0)
+            callback(new Error("\nSqaure invalid"));
+        },200)
 
     }else{
         setTimeout(()=>{
@@ -10,6 +10,6 @@ module.exports=(s,callback)=>{
                 perimeter:()=>(4*s),
                 area:()=>(s*s)
             })
-        },0)
+        },200)
     }
 }

@@ -3,10 +3,9 @@ const square=require('./square');
 const circle=require('./circle');
 const triangle=require('./triangle');
 
-/*
 function solveRect(l,b)
 {
-    console.log("Solving Rectangle "+l+" "+b);
+    console.log("\nSolving Rectangle "+l+" "+b);
     rectangle(l,b,(err,rect)=>{
         if(err){
             console.log(err.message);
@@ -16,24 +15,36 @@ function solveRect(l,b)
         }
     })
     console.log("The function has completed");
-}*/
-
+}
 
 
 function solvesquare(s)
 {
-    console.log("Solving Square "+s);
-    square(s,(err,sq)=>{
+    console.log("\nSolving Square "+s);
+    square(s,(err,tr)=>{
         if(err){
             console.log(err.message);
         }else{
-            console.log("\nThe Area :",sq.area());
-            console.log("\nThe Perimeter :",sq.perimeter());
+            console.log("\nThe Area :",tr.area());
+            console.log("\nThe Perimeter :",tr.perimeter());
         }
     })
     console.log("The Function has completed");
 }
 
+function solveCircle(r)
+{
+    console.log("\nSolving Circle "+r);
+    circle(r,(err,cir)=>{
+        if(err){
+            console.log(err.message);
+        }else{
+            console.log("\nThe Area : ",cir.area());
+            console.log("\nThe Perimeter : ",cir.perimeter());
+        }
+    })
+    console.log("The Function has completed");
+}
 
 /*
 function solveCircle(r)
@@ -49,29 +60,27 @@ function solveCircle(r)
 }
 */
 
-/*
 function solvetriangle(x,y,z)
 {
-    console.log("\nSolving Triangle");
-    if(x<=0||y<=0||z<=0)
-        console.log("Triangle dimensions invalid");
-    else
-    {
-        var s=(x+y+z)/2;
-        console.log("Area",triangle.area(x,y,z,s));
-        console.log("Perimeter",triangle.perimeter(x,y,z));
-    }
+    console.log("\nSolving Triangle having sides "+x+' '+y+' '+z);
+    triangle(x,y,z,(err,sq)=>{
+        if(err){
+            console.log(err.message);
+        }else{
+            console.log("\nThe Area :",sq.area());
+            console.log("\nThe Perimeter :",sq.perimeter());
+        }
+    })
+    console.log("The Function has completed");
 }
-*/
 
-
-//solveRect(0,4);
+solveRect(0,4);
 
 solvesquare(5);
 
-//solveCircle(6);
+solveCircle(6);
 
-//solvetriangle(3,4,5);
+solvetriangle(3,4,5);
 
 
 
