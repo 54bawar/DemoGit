@@ -1,52 +1,52 @@
 const express=require('express');
 const bodyParser = require ('body-parser');
 
-const dishRouter = express.Router();
+const leadRouter = express.Router();
 
-dishRouter.route('/')
+leadRouter.route('/')
 .all((req,res,next)=>{
     res.statusCode=200;
     res.setHeader('Content-Type','application/json');
     next();
 })
 .get((req,res,next)=>{
-    res.end('Will send dishes to you');
+    res.end('GET request for leaders');
 })
 
 .post((req,res,next)=>{
-    res.end("It will create a resource i.e. dishes for you");
+    res.end("POST for leaders");
 })
 
 .put((req,res,next)=>{
-    res.end('Not Supported on '+'dishes');
+    res.end('PUT not Supported on '+'leaders');
 })
 
 .delete((req,res,next)=>{
-    res.end('Delete all the dishes on the server');
+    res.end('Delete all the leaders');
 });
 
 //routes within parameters dishId
-dishRouter.route('/:dishId')
+leadRouter.route('/:leaderId')
 .all((req,res,next)=>{
    // removeEventListener.statusCode = 200;
     res.setHeader('Content-Type','application/json');
     next();
 })
 .get((req,res,next)=>{
-    res.end('Will get dish with id: '+req.params.dishId);
+    res.end('Get for leader id: '+req.params.leaderId);
 })
 
 .post((req,res,next)=>{
-    res.end('Post not supported on dishes/dishId');
+    res.end('Post not supported on leaders/leaderID');
 })
 
 .put((req,res,next)=>{
-    res.end('Updating the dish with id: '+req.params.dishId);
+    res.end('Updating the leader with leaderID: '+req.params.leaderId);
 })
 
 .delete((req,res,next)=>{
-    res.end('Deleting dish with id: '+req.params.dishId);
+    res.end('Deleting leader with ID: '+req.params.leaderId);
 });
 
 
-module.exports = dishRouter;
+module.exports = leadRouter;

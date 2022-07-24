@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const bodyParser=require('body-parser');
 
 const dishRouter = require('./routes/dishRouter')
+const promRouter = require('./routes/promotions')
+const leadRouter = require('./routes/leaders')
 
 const hostname = 'localhost';
 const port =  3030;
@@ -17,6 +19,8 @@ app.use(bodyParser.json());
 
 
 app.use('/dishes/',dishRouter);
+app.use('/promotions/',promRouter);
+app.use('/leaders/',leadRouter);
 
 const server = http.createServer(app);
 

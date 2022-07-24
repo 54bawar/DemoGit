@@ -1,52 +1,52 @@
 const express=require('express');
 const bodyParser = require ('body-parser');
 
-const dishRouter = express.Router();
+const promRouter = express.Router();
 
-dishRouter.route('/')
+promRouter.route('/')
 .all((req,res,next)=>{
     res.statusCode=200;
     res.setHeader('Content-Type','application/json');
     next();
 })
 .get((req,res,next)=>{
-    res.end('Will send dishes to you');
+    res.end('GET for promotions');
 })
 
 .post((req,res,next)=>{
-    res.end("It will create a resource i.e. dishes for you");
+    res.end("POST for promotions");
 })
 
 .put((req,res,next)=>{
-    res.end('Not Supported on '+'dishes');
+    res.end('PUT not Supported on '+'promotions');
 })
 
 .delete((req,res,next)=>{
-    res.end('Delete all the dishes on the server');
+    res.end('Delete all promotions');
 });
 
 //routes within parameters dishId
-dishRouter.route('/:dishId')
+promRouter.route('/:promId')
 .all((req,res,next)=>{
    // removeEventListener.statusCode = 200;
     res.setHeader('Content-Type','application/json');
     next();
 })
 .get((req,res,next)=>{
-    res.end('Will get dish with id: '+req.params.dishId);
+    res.end('Get for promotion ID: '+req.params.promId);
 })
 
 .post((req,res,next)=>{
-    res.end('Post not supported on dishes/dishId');
+    res.end('Post not supported on promotions/promoid');
 })
 
 .put((req,res,next)=>{
-    res.end('Updating the dish with id: '+req.params.dishId);
+    res.end('PUT for Promotion with id: '+req.params.promId);
 })
 
 .delete((req,res,next)=>{
-    res.end('Deleting dish with id: '+req.params.dishId);
+    res.end('Deleting promotion with id: '+req.params.promId);
 });
 
 
-module.exports = dishRouter;
+module.exports = promRouter;
